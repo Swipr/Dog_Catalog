@@ -459,19 +459,19 @@ def deleteDogBreed(type_id, breed_id):
 
 # JSON APIs to view Dog Breed Informations
 @app.route('/dogtypes/JSON')
-def restaurantsJSON():
+def dogTypesJSON():
     dogtypes = session.query(DogTypes).all()
     return jsonify(Dogtypes=[i.serialize for i in dogtypes])
 
 
 @app.route('/dogtype/<int:type_id>/JSON')
-def restaurantMenuJSON(type_id):
+def breedsJSON(type_id):
     breeds = session.query(DogBreeds).filter_by(type_id=type_id).all()
     return jsonify(Breeds=[i.serialize for i in breeds])
 
 
 @app.route('/dogtype/<int:type_id>/breed/<int:breed_id>/JSON')
-def MenuItemJSON(type_id, breed_id):
+def breedJSON(type_id, breed_id):
     dogtype = session.query(DogTypes).filter_by(id=type_id).one()
     breed = session.query(DogBreeds).filter_by(
         id=breed_id).one()
