@@ -209,9 +209,8 @@ def gconnect():
     print("done!")
     return output
 
+
 # User Helper Functions
-
-
 def createUser(login_session):
     newUser = User(name=login_session['username'], email=login_session[
                    'email'], picture=login_session['picture'])
@@ -358,6 +357,7 @@ def showBreed(type_id):
                                creator=creator)
 
 
+# Show a specific dog
 @app.route('/dogtype/<int:type_id>/breed/<int:breed_id>')
 def showBreedInfo(type_id, breed_id):
     dogtype = session.query(DogTypes).filter_by(id=type_id).one()
@@ -376,7 +376,7 @@ def showBreedInfo(type_id, breed_id):
                                creator=creator)
 
 
-# Create a new menu item
+# Create a dog entry
 @app.route('/dogtype/<int:type_id>/breed/new', methods=['GET', 'POST'])
 def newDogBreed(type_id):
     if 'username' not in login_session:
@@ -404,7 +404,7 @@ def newDogBreed(type_id):
         return render_template('newDogBreed.html', type_id=type_id)
 
 
-# Edit a menu item
+# Edit a dog
 @app.route('/dogtype/<int:type_id>/breed/<int:breed_id>/edit',
            methods=['GET', 'POST'])
 def editDogBreed(type_id, breed_id):
@@ -435,7 +435,7 @@ def editDogBreed(type_id, breed_id):
                                breed=editedBreed)
 
 
-# Delete a menu item
+# Delete a dog
 @app.route('/dogtype/<int:type_id>/breed/<int:breed_id>/delete',
            methods=['GET', 'POST'])
 def deleteDogBreed(type_id, breed_id):
