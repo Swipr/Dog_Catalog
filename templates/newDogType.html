@@ -1,0 +1,39 @@
+<html>
+   <head>
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+      <script
+         src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+         integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+         crossorigin="anonymous"></script>
+      <script>
+         jQuery.noConflict();
+         jQuery(document).ready(function($) {
+         $('.placeholder-name').keyup(function(event) {
+         var textBox = event.target;
+         var start = textBox.selectionStart;
+         var end = textBox.selectionEnd;
+         textBox.value = textBox.value.charAt(0).toUpperCase() + textBox.value.slice(1);
+         textBox.setSelectionRange(start, end);
+         });
+         });
+      </script>
+   </head>
+   <body>
+      <div class="login-scr">
+         <div class="login-box">
+            <h1 class="edit-title"> Add a new dog type </h1>
+            <form action="#" method = 'POST'>
+               <p class="title">Name:</p>
+               <div class="">
+                  <input class="placeholder-name" type="text" placeholder="New Dog Breed Name" name="newDogTypeName">
+               </div>
+               </br>
+               <div class="">
+                  <input class="create-cancel-btn" type="submit" value="Create">
+                  <a class="create-cancel-btn" href= '{{url_for('showDogTypes')}}'>Cancel</a>
+               </div>
+            </form>
+         </div>
+      </div>
+   </body>
+</html>

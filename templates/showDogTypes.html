@@ -1,0 +1,62 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+</br>
+<div class="row banner main">
+   <h1>Dog Breed Catalog</h1>
+   </br>
+   </br>
+   </br>
+</div>
+</br>
+</br>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+   {% for message in messages %}
+   <li><strong>{{message}}</strong></li>
+   {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+<div class="col-md-12">
+   <div class="col-md-7 col-lg-8 ">
+      <div class="row banner main ">
+         <h2><a class="newdog-btn" href = '{{url_for('newDogType') }}'>Create a new dog type</a></h2>
+         <br>
+         <br>
+      </div>
+      {% for dogtype in dogtypes %}
+      <div class="row">
+         <div class="col-md-12">
+            <a class="dogtype-link" href = "{{url_for('showBreed', type_id =  dogtype.id)}}">
+               <div class="breed-list hoverable">{{dogtype.type}}</div>
+            </a>
+            {% if dogtype.user_id == session['user_id'] %}
+            <a class="edit-del-btn" href = '{{url_for('deleteDogType', id = dogtype.id ) }}'>Delete</a>
+            <a class="edit-del-btn" href='{{url_for('editDogType', id = dogtype.id) }}'>Edit</a>
+            {% endif %}
+         </div>
+      </div>
+      <br>
+      {% endfor %}
+   </div>
+   </br>
+   <div class="col-md-offset-7 col-lg-offset-6 col-lg-3 latest-dogs">
+      <h1>Latest Dogs Added</h1>
+      </br>
+      {% for dogs in latestAddedDogs %}
+      <a href = "{{url_for('showBreedInfo', type_id=dogs.type_id, breed_id=dogs.id)}}">
+         <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10 ">
+               <h3 class="hoverable">{{dogs.name}}</h3>
+            </div>
+            <div class="col-md-1"></div>
+         </div>
+      </a>
+      </br>
+      {% endfor %}
+   </div>
+</div>
+{% endblock %}

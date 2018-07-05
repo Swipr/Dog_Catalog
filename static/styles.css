@@ -1,0 +1,251 @@
+body {
+     font-family: sans-serif;
+     background-color: #333;
+     text-align: center;
+     max-height: 100%;
+}
+ h1, h2, h3, h4 {
+     color: #C9CEBD;
+}
+ h1, h2 {
+     font-family: 'georgia', serif;
+     margin: 0;
+}
+ h1 {
+     border-bottom: 2px solid #5AB1BB;
+     font-size: 52px;
+}
+ h2 {
+     font-size: 1.5em;
+}
+ a:hover {
+     color: #ffffcc;
+     text-decoration: none;
+}
+ .newdog-btn {
+     font-size: 1.1em;
+     font-style: oblique;
+     border: 1px solid #FF5666;
+     border-radius: 18px;
+     padding-left: 12px;
+     padding-right: 12px;
+     padding-bottom: 10px;
+     padding-top: 10px;
+}
+ .newdog-btn:hover{
+     text-decoration: underline;
+}
+ .banner{
+     padding-bottom: 25px;
+}
+ ul{
+     padding-bottom: 25px;
+     list-style-type: none;
+}
+ p, dd, dt {
+     color: #ffc;
+     font-size: 1.75em;
+}
+ a {
+     text-decoration: none;
+     color: #ffffcc;
+     font-size: .75em;
+}
+ .creator{
+     text-align: right;
+     font-size: 1em;
+     margin-bottom: 0;
+     color: gray;
+}
+ .back-btn{
+     float: left;
+     z-index: 1;
+     text-align: left;
+}
+ .dogtype-link{
+     font-size: 1.72em;
+     line-height: 2em;
+}
+ .dogbreed-link{
+     font-size: 1.72em;
+     line-height: 2em;
+}
+ .breed-list{
+     border: 1px solid #5AB1BB;
+     border-radius: 8px;
+}
+ .dog-list{
+     border: 1px solid #5AB1BB;
+     border-radius: 8px;
+}
+ .edit-del-btn{
+     float: right;
+     border: 1px solid #FF5666;
+     border-radius: 5px;
+     padding: 5px;
+     margin-left: 5px;
+     margin-top: 5px;
+}
+ .edit-del-btn:hover{
+     text-decoration: underline;
+}
+ .info-btns{
+     margin-top: 80px;
+}
+ .edit-del-info-btn{
+     border: 1px solid #FF5666;
+     border-radius: 5px;
+     padding: 5px;
+     margin-left: 5px;
+     margin-top: 5px;
+     font-size: 1.8em;
+}
+ .edit-del-info-btn:hover{
+     text-decoration: underline;
+}
+ .latest-dogs {
+     border: 1px solid #FF5666;
+     border-radius: 5px;
+     margin-top: 68px;
+     position: fixed;
+     -webkit-box-shadow: 6px 6px 6px 0px rgba(0,0,0,0.75);
+     -moz-box-shadow: 6px 6px 6px 0px rgba(0,0,0,0.75);
+     box-shadow: 6px 6px 6px 0px rgba(0,0,0,0.75);
+}
+ .latest-dogs h1{
+     font-size: 2.2em;
+     padding-top: 15px;
+     padding-bottom: 15px;
+     border-bottom: 1px solid #FF5666;
+}
+ .latest-dogs h3{
+     font-style: italic;
+     font-size: 2em;
+     margin: 5px 0 0 0;
+     border: 1px solid #FF5666;
+     border-radius: 5px;
+     padding: 8px;
+}
+ .latest-dogs h3:hover{
+     color: #FF5666;
+}
+ .top-menu{
+     padding-bottom: 20px;
+     padding-top: 10px;
+}
+ .header-btn {
+     font-size: 1.2em;
+     border: 1px solid #FF5666;
+     border-radius: 8px;
+     padding: 5px;
+     color: #FF5666;
+}
+ .show-all-btn{
+     border: 1px solid #5AB1BB;
+     color: #C9CEBD;
+}
+ .show-all-btn:hover{
+     border: 1px solid #5AB1BB;
+     color: #5AB1BB;
+}
+ .creator-text{
+     font-size: 1.5em;
+}
+ img {
+     width: 8%;
+}
+ figcaption{
+     font-size: 1.8em;
+}
+ .dog-image {
+     width: 40%;
+     max-width: 40%
+}
+ .dog-info{
+     color: #FF5666;
+     padding-bottom: 5px;
+     font-size: 2em;
+}
+ .hoverable {
+     transition: box-shadow .3s;
+     transition: all .2s ease-in-out;
+     box-shadow: 0 0 12px rgba(33, 33, 33, 1);
+     cursor: pointer;
+}
+ .hoverable:hover {
+     transform: scale(1.1);
+}
+ .edit-title{
+     font-size: 3em;
+     color: #333;
+}
+ .title {
+     width: 100%;
+     display: block;
+     font-family: Montserrat-Medium;
+     font-size: 45px;
+     color: #333;
+     line-height: 1.2;
+     text-align: center;
+     padding-top: 30px;
+}
+ .login-scr{
+     width: 100%;
+     min-height: 100vh;
+     display: -webkit-box;
+     display: -webkit-flex;
+     display: -moz-box;
+     display: -ms-flexbox;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: #333;
+}
+ .login-box{
+     width: 480px;
+     background: #fff;
+     border-radius: 10px;
+     padding: 60px;
+}
+ .create-cancel-btn{
+     border: 2px solid #5AB1BB;
+     border-radius: 5px;
+     padding: 5px;
+     margin-left: 5px;
+     margin-top: 5px;
+     color: #333;
+     text-transform: uppercase;
+     font-size: 1em;
+     cursor: pointer;
+     font-weight: 600;
+     -webkit-box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.75);
+     -moz-box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.75);
+     box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.75);
+}
+ .create-cancel-btn:hover{
+     text-decoration: none;
+     color: #333;
+     background-color: #5AB1BB;
+     border: 2px solid #333;
+}
+ .placeholder {
+     width:auto;
+     width: 350px;
+     height: 40px;
+     text-align: center;
+}
+ .placeholder-name {
+     width:auto;
+     width: 350px;
+     height: 40px;
+     text-align: center;
+}
+ ::-webkit-input-placeholder{
+     text-align: center;
+}
+ strong {
+     color: lightcoral;
+     font-size: 20px;
+     font-style: italic;
+     font-family: fantasy;
+}

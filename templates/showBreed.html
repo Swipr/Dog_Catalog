@@ -1,0 +1,59 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<h1>{{dogtype.type}}</h1>
+</br>
+</br>
+</br>
+</br>
+<div class="row padding-top padding-bottom">
+   <div class="col-md-12 padding-none">
+      <div class="row banner main ">
+         <h2><a class="newdog-btn" href ='{{url_for('newDogBreed', type_id=dogtype.id) }}'>Create a new dog breed</a></h2>
+         <br>
+         <br>
+      </div>
+   </div>
+</div>
+<div class="row">
+   <div class="col-md-12">
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <ul>
+         {% for message in messages %}
+         <li> <strong> {{ message }} </strong> </li>
+         {% endfor %}
+      </ul>
+      {% endif %}
+      {% endwith %}
+   </div>
+</div>
+{% if dogs !=[] %}
+{% for dog in dogs %}
+<div class="row">
+   <div class="col-md-1"></div>
+   <div class="col-md-10">
+      <a class="dogbreed-link" href = "{{url_for('showBreedInfo', type_id=dogtype.id, breed_id=dog.id)}}">
+         <div class="dog-list hoverable">{{dog.name}}</div>
+      </a>
+      {% if creator.id == session['user_id'] %}
+      <a class="edit-del-btn" href = '{{url_for('deleteDogBreed', type_id=dogtype.id, breed_id=dog.id) }}'>Delete</a>
+      <a class="edit-del-btn" href='{{url_for('editDogBreed', type_id=dogtype.id, breed_id=dog.id) }}'>Edit</a>
+      {% endif %}
+   </div>
+   <div class="col-md-1"></div>
+</div>
+</br>
+{% endfor %}
+{% endif %}
+{% if dogs == [] %}
+<p>Looks like this type is empty at the moment.</p>
+{% endif %}
+<div>
+   <p class="creator creator-text">Creator:</p>
+   <figure class="creator">
+      <img src="{{ creator.picture }}">
+      <figcaption>{{ creator.name }}</figcaption>
+   </figure>
+</div>
+{% endblock %}

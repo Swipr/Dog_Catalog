@@ -1,0 +1,33 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class="row banner menu">
+   <div class="col-md-12 padding-none">
+      <h1>New Dog Breed</h1>
+   </div>
+</div>
+<div class="login-scr">
+   <div class="login-box">
+      <div class="row">
+         <div class="col-md-12">
+            <form action="#" method = "post">
+               <div class="form-group">
+                  <label class="title" for="name">Name:</label>
+                  <input type ="text" maxlength="50" class="form-control upper-name" name="name" placeholder="Name of the breed" required>
+                  <label class="title" for="country">Country:</label>
+                  <input type ="text" maxlength="50" class="form-control" name="country" placeholder="Country of the breed" required>
+                  <label class="title" for="image">Image:</label>
+                  <input type ="url" class="form-control" maxlength="250" name="image" placeholder="Image link">
+                  <label class="title" for="description">Description:</label>
+                  <textarea class="form-control" maxlength="250" rows="3" name="description" placeholder="Description of the breed" required></textarea>
+               </div>
+               <div class="">
+                  <input class="create-cancel-btn" type="submit" value="Create">
+                  <a class="create-cancel-btn" href= '{{url_for('showBreed', type_id =  type_id)}}'>Cancel</a>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
+{% endblock %}

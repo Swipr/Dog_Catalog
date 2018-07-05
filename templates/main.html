@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+      <script
+         src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+         integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+         crossorigin="anonymous"></script>
+      <script>
+         jQuery.noConflict();
+         jQuery(document).ready(function($) {
+         $('.upper-name').keyup(function(event) {
+         var textBox = event.target;
+         var start = textBox.selectionStart;
+         var end = textBox.selectionEnd;
+         textBox.value = textBox.value.toUpperCase();
+         textBox.setSelectionRange(start, end);
+         });
+         });
+      </script>
+   </head>
+   <body>
+      <div class="container">
+         {% block content %}
+         {% endblock %}
+      </div>
+   </body>
+</html>

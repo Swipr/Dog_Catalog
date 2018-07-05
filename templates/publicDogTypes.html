@@ -1,0 +1,56 @@
+{% extends "main.html" %}
+{% block content %}
+<div class="row top-menu">
+   <div class="col-md-9"></div>
+   <div class="col-md-3 text-right">
+      <a class="header-btn login-btn" href="{{url_for('showLogin')}}">Click Here to Log in </a>
+   </div>
+</div>
+<div class="row banner main">
+   <h1>Dog Breed Catalog</h1>
+   </br>
+   </br>
+   </br>
+</div>
+<div class = 'flash'>
+   {% with messages = get_flashed_messages() %}
+   {% if messages %}
+   <ul>
+      {% for message in messages %}
+      <li> <strong> {{ message }} </strong> </li>
+      {% endfor %}
+   </ul>
+   {% endif %}
+   {% endwith %}
+</div>
+<div class="col-md-12 col-lg-12">
+   <div class="col-md-7 col-lg-8">
+      {% for dogtype in dogtypes %}
+      <div class="row">
+         <div class="col-md-12">
+            <a class="dogtype-link" href = "{{url_for('showBreed', type_id =  dogtype.id)}}">
+               <div class="breed-list hoverable">{{dogtype.type}}</div>
+            </a>
+         </div>
+      </div>
+      <br>
+      {% endfor %}
+   </div>
+   <div class="col-md-offset-7 col-lg-offset-6 latest-dogs">
+      <h1>Latest Dogs Added</h1>
+      </br>
+      {% for dogs in latestAddedDogs %}
+      <a href = "{{url_for('showBreedInfo', type_id=dogs.type_id, breed_id=dogs.id)}}">
+         <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+               <h3>{{dogs.name}}</h3>
+            </div>
+            <div class="col-md-1"></div>
+         </div>
+      </a>
+      </br>
+      {% endfor %}
+   </div>
+</div>
+{% endblock %}

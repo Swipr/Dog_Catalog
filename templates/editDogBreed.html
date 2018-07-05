@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <h1> EDIT: <i>{{breed.name}}</i></h1>
+
+    <div class="login-scr">
+        <div class="login-box">
+            <div class="row">
+                <div class="col-md-12">
+                    <form action="{{url_for('editDogBreed', type_id=type_id, breed_id=breed_id, item=editedBreed )}}" method='POST'>
+                        <div class="form-group">
+                            <label class="title" for="name">Name:</label>
+                            <input type="text" maxlength="50" class="form-control placeholder" name="name" value="{{breed.name}}" required>
+
+                            <label class="title" for="country">Country:</label>
+
+                            <input type="text" maxlength="50" class="form-control placeholder" name="country" value="{{breed.country}}">
+
+                            <label class="title" for="image">Image:</label>
+
+                            <input type="url" class="form-control placeholder" maxlength="350" name="image" value="{{breed.image}}">
+
+                            <label class="title" for="description">Description:</label>
+
+                            <textarea class="form-control placeholder" maxlength="250" rows="3" name="description">{{breed.description}}</textarea>
+                        </div>
+                        </br>
+                        <div class="">
+                            <input class="create-cancel-btn" type='submit' value='Edit'>
+
+                            <a class="create-cancel-btn" href='{{url_for(' showBreedInfo ', type_id=type_id,  breed_id=breed_id)}}'>Cancel</a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

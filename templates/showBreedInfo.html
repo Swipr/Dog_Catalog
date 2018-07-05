@@ -1,0 +1,38 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<h1>{{breed.name}}</h1>
+</br>
+</br>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+   {% for message in messages %}
+   <li><strong>{{message}}</strong></li>
+   {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+</br>
+</br>
+<div>
+   {% if breed.image == '' %}
+   <img class="dog-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/No_dogs.svg/480px-No_dogs.svg.png"></img>
+   {% else %}
+   <img class="dog-image" src="{{breed.image}}"></img>
+   {% endif %}
+   <br>
+   <br>
+   <h2 class="dog-info">Country of origin:</h2>
+   <p>{{breed.country}}</p>
+   <br>
+   <h2 class="dog-info">Description: </h2>
+   <p> {{breed.description|linkify|safe}} </p>
+   {% if creator.id == session['user_id'] %}
+   <div class="info-btns">
+      <a class="edit-del-info-btn" href='{{url_for('editDogBreed', type_id=dogtype.id, breed_id=breed.id) }}'>Edit</a>
+      <a class="edit-del-info-btn" href = '{{url_for('deleteDogBreed', type_id=dogtype.id, breed_id=breed.id) }}'>Delete</a>
+   </div>
+</div>
+{% endif %}
+{% endblock %}

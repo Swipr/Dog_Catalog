@@ -1,0 +1,13 @@
+<div class="row top-menu">
+    <div class="col-md-6  back-btn">
+        <a class="header-btn show-all-btn" href="{{url_for('showDogTypes')}}">
+            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>Show All Dog Types
+        </a>
+    </div>
+    <div class="col-md-6 text-right">
+        {%if 'username' not in session %}
+        <a class="header-btn login-btn" href="{{url_for('showLogin')}}">Click Here to Login </a> {% else %}
+        <a class="header-btn login-btn" href="{{url_for('disconnect')}}">Logout </a> {% endif %}
+
+    </div>
+</div>

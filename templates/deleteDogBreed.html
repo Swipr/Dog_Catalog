@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="login-scr">
+        <div class="login-box">
+            <h1 class="edit-title">Are you sure you want to delete:
+    </br> </br><i>{{breed.name}}?</i> </h1>
+            </br>
+            </br>
+            </br>
+            <form action="#" method='post'>
+
+                <div class="">
+                    <input class="create-cancel-btn" type="submit" value="Delete">
+                    <a class="create-cancel-btn" href='{{ url_for(' showBreedInfo ', type_id=type_id,  breed_id=breed.id)}}'>Cancel</a>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
