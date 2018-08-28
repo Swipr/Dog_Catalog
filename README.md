@@ -4,7 +4,13 @@
 &nbsp;
 
 ### Dog catalog.
+
+Develop an application that provides a list of items within a variety of categories, as well as provide a user registration and authentication system. Registered users will have the ability to post, edit, and delete their own items.
+
 *This is project 4 of the [Udacity Full Stack Nanodegree](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004) course.*
+
+
+#### DEMO : http://ec2-18-191-51-64.us-east-2.compute.amazonaws.com
 
 &nbsp;
 
